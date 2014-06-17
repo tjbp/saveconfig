@@ -31,7 +31,7 @@ class SaveConfig extends Repository
      *
      * @return void
      */
-    public function save($group, $namespace, $collection)
+    public function save()
     {
         $env = $this->environment;
 
@@ -86,7 +86,7 @@ class SaveConfig extends Repository
 
         if ($namespace == '*') $namespace = null;
 
-        return [$group, $namespace];
+        return [$namespace, $group];
     }
 
     /**
