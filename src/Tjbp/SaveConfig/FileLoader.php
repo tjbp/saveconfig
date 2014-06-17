@@ -30,6 +30,6 @@ class FileLoader extends \Illuminate\Config\FileLoader
         // merged on top of the main arrays to make the environments cascade.
         $file = (!$environment) ? "{$path}/{$group}.php" : "{$path}/{$environment}/{$group}.php";
 
-        $this->files->put($file, 'return ' . var_export($items, true));
+        $this->files->put($file, '<?php return ' . var_export($items, true) . ';');
     }
 }
