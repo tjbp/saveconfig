@@ -11,9 +11,9 @@ class SaveConfigServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['config'] = function($app)
+        $this->app->bind('config', function($app)
         {
-            return new SaveConfig;
-        };
+            return new SaveConfig($app->getConfigLoader(), $app->environment());
+        });
     }
 }

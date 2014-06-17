@@ -1,6 +1,7 @@
 <?php namespace Tjbp\SaveConfig;
 
 use Illuminate\Config\Repository;
+use Illuminate\Config\LoaderInterface;
 
 class SaveConfig extends Repository
 {
@@ -20,9 +21,9 @@ class SaveConfig extends Repository
      */
     public function __construct(LoaderInterface $loader, $environment)
     {
-        $loader = new FileLoader($loader->getFilesystem(), $environment);
+        $loader = new FileLoader($loader->getFilesystem(), app_path() . '/config');
 
-        parent::_construct($loader, $environment);
+        parent::__construct($loader, $environment);
     }
 
     /**

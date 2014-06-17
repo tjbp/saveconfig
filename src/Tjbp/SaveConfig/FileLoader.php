@@ -2,7 +2,7 @@
 
 use Illuminate\Filesystem\Filesystem;
 
-class FileLoader extends Illuminate\Config\FileLoader
+class FileLoader extends \Illuminate\Config\FileLoader
 {
     /**
      * Save the given configuration group.
