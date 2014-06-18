@@ -28,7 +28,9 @@ class FileLoader extends \Illuminate\Config\FileLoader
         // First we'll get the main configuration file for the groups. Once we have
         // that we can check for any environment specific files, which will get
         // merged on top of the main arrays to make the environments cascade.
-        $file = (!$environment) ? "{$path}/{$group}.php" : "{$path}/{$environment}/{$group}.php";
+        $file = (!$environment || ($environment == 'production'))
+            ? "{$path}/{$group}.php"
+            : "{$path}/{$environment}/{$group}.php";
 
         $this->files->put($file, '<?php return ' . var_export($items, true) . ';');
     }
