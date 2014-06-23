@@ -47,4 +47,4 @@ When working within a development environment, be sure to commit any changes to 
 
 ## Licence
 
-This software is licensed under the GPLv3, see the `LICENCE` file for more details.
+This software is licensed under the GPLv3, see the `LICENSE` file for more details.
