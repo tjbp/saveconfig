@@ -1,6 +1,6 @@
 {
     "name": "tjbp/saveconfig",
-    "description": "Extends Laravel's Config component with save-to-file functionality.",
+    "description": "Extends Laravel's Config component with save functionality.",
     "keywords": ["laravel", "config", "save"],
     "license": "GPL-3.0",
     "authors": [
@@ -10,10 +10,13 @@
         }
     ],
     "require": {
-        "php": ">=5.2.0"
+        "php": "~5.3",
+        "illuminate/config": "~4.0"
     },
     "autoload": {
-        "classmap": ["src"]
+        "psr-4": {
+            "Tjbp\\SaveConfig\\": "src/"
+        }
     },
     "minimum-stability": "dev"
 }
